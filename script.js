@@ -36,100 +36,70 @@ const typing = document.getElementById("typing");
 let i = 0;
 
 function typeWriter() {
-
     if (typing && i < message.length) {
-
         typing.innerHTML += message.charAt(i);
-
         i++;
-
         setTimeout(typeWriter, 40);
-
     }
-
 }
 
 window.onload = typeWriter;
+
 const photos = [
-"IMG-20260804-WA0000.jpg",
-"IMG-20260804-WA0002.jpg",
 "IMG-20260804-WA0003.jpg",
-"IMG-20260804-WA0005.jpg",
-"IMG-20260804-WA0006.jpg"
+"IMG-20260804-WA0002.jpg",
+"IMG-20260804-WA0000.jpg",
+"IMG-20260804-WA0006.jpg",
+"IMG-20260804-WA0005.jpg"
 ];
+
 let current = 0;
 
 setInterval(() => {
+    const slide = document.getElementById("slide");
 
-const slide = document.getElementById("slide");
-
-if (slide) {
-
-current++;
-
-if (current >= photos.length) {
-
-current = 0;
-
-}
-
-slide.src = photos[current];
-
-}
-
+    if (slide) {
+        current++;
+        if (current >= photos.length) {
+            current = 0;
+        }
+        slide.src = photos[current];
+    }
 }, 3000);
 
 const noBtn = document.getElementById("noBtn");
 
 if (noBtn) {
-
-noBtn.addEventListener("mouseover", () => {
-
-noBtn.style.position = "absolute";
-
-noBtn.style.left = Math.random() * 70 + "%";
-
-noBtn.style.top = Math.random() * 70 + "%";
-
-});
-
+    noBtn.addEventListener("mouseover", () => {
+        noBtn.style.position = "absolute";
+        noBtn.style.left = Math.random() * 70 + "%";
+        noBtn.style.top = Math.random() * 70 + "%";
+    });
 }
 
 const yesBtn = document.getElementById("yesBtn");
 
 if (yesBtn) {
-
-yesBtn.onclick = () => {
-
-alert("❤️ Thank You My Love ❤️\n\nI Promise I'll Always Love You Forever.\n\n- Ansh");
-
-}
-
+    yesBtn.onclick = () => {
+        alert("❤️ Thank You My Love ❤️\n\nI Promise I'll Always Love You Forever.\n\n- Ansh");
+    };
 }
 
 setInterval(() => {
+    const heart = document.createElement("div");
 
-const heart = document.createElement("div");
+    heart.innerHTML = "💖";
+    heart.style.position = "fixed";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.top = "100vh";
+    heart.style.fontSize = (15 + Math.random() * 25) + "px";
+    heart.style.pointerEvents = "none";
+    heart.style.zIndex = "9999";
+    heart.style.animation = "heartMove 5s linear forwards";
 
-heart.innerHTML = "💖";
+    document.body.appendChild(heart);
 
-heart.style.position = "fixed";
-
-heart.style.left = Math.random() * 100 + "vw";
-
-heart.style.top = "100vh";
-
-heart.style.fontSize = (15 + Math.random() * 25) + "px";
-
-heart.style.pointerEvents = "none";
-
-heart.style.zIndex = "9999";
-
-heart.style.animation = "heartMove 5s linear forwards";
-
-document.body.appendChild(heart);
-
-setTimeout(() => heart.remove(), 5000);
+    setTimeout(() => heart.remove(), 5000);
 
 }, 350);
 
