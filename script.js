@@ -58,7 +58,6 @@ IMG-20260804-WA0003.jpg
 IMG-20260804-WA0005.jpg
 IMG-20260804-WA0006.jpg
 ];
-
 let current = 0;
 
 setInterval(() => {
