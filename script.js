@@ -52,11 +52,11 @@ function typeWriter() {
 window.onload = typeWriter;
 
 const photos = [
-"IMG-20260801-WA0005.jpg",
-"IMG-20260801-WA0006.jpg",
-"IMG-20260801-WA0007.jpg",
-"IMG-20260801-WA0008.jpg",
-"IMG-20260801-WA0009.jpg"
+IMG-20260804-WA0000.jpg
+IMG-20260804-WA0002.jpg
+IMG-20260804-WA0003.jpg
+IMG-20260804-WA0005.jpg
+IMG-20260804-WA0006.jpg
 ];
 
 let current = 0;
